@@ -31,4 +31,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: mochawesome-reports
-          path: cypress/reports  # Path where mochawesome saves reports
+          path: cypress/reports
+  
+      - name: Upload Cypress screenshots
+        if: always()  # This runs even if tests fail
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots  # The folder where Cypress saves screenshots
