@@ -19,14 +19,20 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Cache Cypress binary
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Cypress  # Cache Cypress binary
+          key: ${{ runner.os }}-cypress-${{ hashFiles('package-lock.json') }}  # Create cache key based on OS and lockfile
+          restore-keys: |
+            ${{ runner.os }}-cypress-
+
       - name: Install dependencies
         run: npm install
 
-      - name: Ensure Cypress is executable
-        run: chmod +x ./node_modules/.bin/cypress  # Add this step
-
       - name: Run Cypress tests
         run: npx cypress run
+
 
 
       - name: Upload Mochawesome Reports
