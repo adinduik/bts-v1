@@ -19,36 +19,16 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Cache Cypress binary
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/Cypress  # Cache the Cypress binary directory
-          key: ${{ runner.os }}-cypress-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-cypress-
-
-      - name: Install dependencies
+      - name: Install Node.js dependencies
         run: npm install
 
-      - name: Install Cypress binary if not cached
-        run: npx cypress install  # Ensure Cypress binary is downloaded if not cached
-
-      - name: Ensure Cypress binary is executable
-        run: |
-          if [ -f ~/.cache/Cypress/*/Cypress/Cypress ]; then
-            chmod +x ~/.cache/Cypress/*/Cypress/Cypress
-          fi
-
       - name: Run Cypress tests
-        run: npx cypress run
-
-
-
-
+        uses: cypress-io/github-action@v5  # Cypress GitHub Action to manage everything
+        with:
+          runTests: true  # Automatically runs 'npx cypress run'
 
       - name: Upload Mochawesome Reports
-        if: always()  
         uses: actions/upload-artifact@v3
         with:
-          name: mochawesome-reports  # Name of the uploaded artifact
-          path: cypress/reports  # Path to the mochawesome reports
+          name: mochawesome-reports
+          path: cypress/reports  # Path where mochawesome saves reports
