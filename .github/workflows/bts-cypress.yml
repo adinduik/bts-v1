@@ -23,15 +23,19 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.cache/Cypress  # Cache Cypress binary
-          key: ${{ runner.os }}-cypress-${{ hashFiles('package-lock.json') }}  # Create cache key based on OS and lockfile
+          key: ${{ runner.os }}-cypress-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-cypress-
 
       - name: Install dependencies
         run: npm install
 
+      - name: Ensure Cypress binary is executable
+        run: chmod +x ~/.cache/Cypress/*/Cypress/Cypress  # Ensure binary is executable
+
       - name: Run Cypress tests
         run: npx cypress run
+
 
 
 
