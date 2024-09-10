@@ -23,4 +23,4 @@ jobs:
         run: npm install  # Install the npm dependencies
       
       - name: Run Cypress tests
-        run: npm run cy:run  # Replace 'cy:run' with the npm script to run your Cypress tests
+        run: npx cypress run  # Replace 'cy:run' with the npm script to run your Cypress tests
