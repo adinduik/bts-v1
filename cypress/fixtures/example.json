@@ -1,0 +1,46 @@
+{
+  "tellerdetails": ["Teller.User@btstest.com", "password1"],  
+  "approverdetails": ["Approver.User@btstest.com", "password2"],
+  "admindetails": ["Admin.User@btstest.com", "password3"],
+  "token": "111111",
+  "welcometext": " Welcome to Banking Transaction System V1.0",
+
+
+  "depositPhoneNumber": "08065773215",
+  "depositAccountNumber": "1203405607",
+  "depositorName": "Test User",
+  "currency": "Naira(NGN)",
+  "depositType": "Cash Deposit",
+  "transactionDate": "2024\\September\\10",
+  "belowDepositLimitTransactionAmount": "99990",
+  "belowDepositLimitAmountBreakdown": ["99", "1", "2", "0", "1", "2", "0", "0"],
+  "aboveDepositLimitTransactionAmount": "500050",
+  "aboveDepositLimitAmountBreakdown": ["500", "0", "0", "0", "1", "0", "0", "0"],
+  "declineDepositTransactionAmount": "250000",
+  "declineDepositAmountBreakdown": ["250", "0", "0", "0", "0", "0", "0", "0"],
+  "remark": "This is a test",
+  "narration": "This is a test narration",
+  "transactionapprovalremark": "This is okay to process",
+
+
+
+  "withdrawalPhoneNumber": "08065773215",
+  "withdrawalAccountNumber": "1203405607",
+  "DraweeName": "Test User",
+  "withdrawalType": ["Cash Withdrawal", "Cheque Withdrawal", "Withdrawal Slip"],
+  "instrumentType": ["DDS", "Cheque"],
+  "slipNumber": "102345",
+  "chequeNumber": "024156",
+  "belowWithdrawalLimitTransactionAmount": "100500",
+  "belowWithdrawalLimitAmountBreakdown": ["100", "1", "0", "0", "0", "0", "0", "0"],
+  "aboveWithdrawalLimitTransactionAmount": "250050",
+  "aboveWithdrawalLimitAmountBreakdown": ["250", "0", "0", "0", "1", "0", "0", "0"],
+  "declineWithdrawalTransactionAmount": "250000",
+  "declineWithdrawalAmountBreakdown": ["250", "0", "0", "0", "0", "0", "0", "0"]
+  
+
+
+
+
+
+}
