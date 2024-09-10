@@ -26,7 +26,7 @@ jobs:
         run: npx cypress run  # Replace 'cy:run' with the npm script to run your Cypress tests
 
       - name: Upload Mochawesome Reports
-        if: always()  # Always run this step, even if tests fail
+        if: always()  
         uses: actions/upload-artifact@v3
         with:
           name: mochawesome-reports  # Name of the uploaded artifact
