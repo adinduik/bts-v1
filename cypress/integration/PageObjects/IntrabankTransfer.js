@@ -1,33 +1,23 @@
-class CashWithdrawal{
+class IntrabankTransfer{
 
-    selectWithdrawals(){
+    selectTransfers(){
 
         return cy.get('.sc-jwXWPX')
     }
 
-    selectCashWithdrawals(){
+    selectIntrabankTransfer(){
 
         return cy.get('.sc-kpjZlD')
     }
 
-    inputaccountNumber(){
+    inputCustomerAccountNumber(){
 
-        return cy.get('input[name="accountNumber"]')
+        return cy.get('input[name="accountNumber"].eq[0]')
     }
 
-    selectaccountownerwithdrawer(){
+    inputBeneficiaryAccountNumber(){
 
-        return cy.get('input[value="yes"]')
-    }
-
-    selectnonaccountownerwithdrawer(){
-
-        return cy.get('input[value="no"]')
-    }
-
-    inputWithdrawerPhoneNumber(){
-
-        return cy.get('input[name="phoneNumber"]')
+        return cy.get('input[value="accountNumber"].eq[1]')
     }
 
     clickCurrency(){
@@ -40,29 +30,14 @@ class CashWithdrawal{
         return cy.get('.sc-hMagqs')
     }
 
-    clickWithdrawalType(){
-
-        return cy.get('.sc-hBYZlh').contains('Select Deposit Type')
-    }
-
-    selectWithdrawalType(){
-
-        return cy.get('.sc-hMagqs')
-    }
-
-    clickInstrumentType(){
-
-        return cy.get('.sc-hBYZlh').contains('Select Deposit Type')
-    }
-
-    inputInstrumentNumber(){
-
-        return cy.get('.sc-hMagqs')
-    }
-    
     inputTransactionAmount(){
 
         return cy.get('input[name="amount"]')
+    }
+  
+    inputDepositorPhoneNumber(){
+
+        return cy.get('input[name="phoneNumber"]')
     }
 
     inputremark(){
@@ -75,12 +50,19 @@ class CashWithdrawal{
 
         return cy.get('textarea[name="narration"]')
     }
+    
+    clickInstrumentType(){
 
-    transactionbreakDown(){
-
-        return cy.get('.sc-ljhsyB')
+        return cy.get('.sc-hBYZlh').contains('Select Deposit Type')
     }
 
+    inputInstrumentNumber(){
+
+        return cy.get('.sc-hMagqs')
+    }
+    
+   
+  
     postTransaction(){
 
         return cy.get('button').contains('Post Transaction')
@@ -91,7 +73,7 @@ class CashWithdrawal{
         return cy.get('a[href="/limit-approval"]')
     }
 
-    selectwithdrawallimit(){
+    selectTransferslimit(){
 
         return cy.get('a[href="/limit-approval/deposit"]')
     }
@@ -99,11 +81,6 @@ class CashWithdrawal{
     approvebutton(){
 
         return cy.get('.sc-ijCkoE button').contains('Approve')
-    }
-
-    declinebutton(){
-
-        return cy.get('.sc-ijCkoE button').contains('Decline')
     }
 
     approvalremark(){
@@ -118,4 +95,4 @@ class CashWithdrawal{
 
 }
 
-export default CashWithdrawal
+export default IntrabankTransfer
